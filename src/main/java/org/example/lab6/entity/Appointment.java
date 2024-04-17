@@ -1,11 +1,14 @@
 package org.example.lab6.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.lab6.dto.AppointmentDTO;
-import org.example.lab6.dto.DentistDTO;
+import org.example.lab6.entity.Dentist;
+import org.example.lab6.entity.Patient;
+import org.example.lab6.entity.Surgery;
+
+import java.time.LocalDateTime;
+
 
 @Entity
 @NoArgsConstructor
@@ -13,7 +16,7 @@ import org.example.lab6.dto.DentistDTO;
 public class Appointment {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime appointmentDateTime;
     @ManyToOne()

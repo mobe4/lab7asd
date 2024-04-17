@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Address {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String addressOne;
     private String city;
